@@ -3,8 +3,6 @@ package DomainTests;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.util.Set;
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +10,7 @@ import DataType.Game;
 import DataType.PokerGame;
 import domain.Director;
 import domain.Player;
-import domain.User;
+import exceptions.UnableToAddUserToGameException;
 
 public class DirectorTests {
 
@@ -29,7 +27,7 @@ public class DirectorTests {
 	public void doSetup(){
 		director = new Director(firstName, directorLast, email);
 		player = new Player(firstName, playerLast, email);
-		game = new PokerGame();
+		game = new PokerGame(null);
 		score = new Double(5);
 	}
 	
@@ -41,11 +39,27 @@ public class DirectorTests {
 		assertEquals(player,  game.getPlayers().toArray()[0]);
 	}
 	
+	@Test (expected=UnableToAddUserToGameException.class)
+	public void directorCanNotAddSamePlayerToGameTwice() throws Exception{
+		director.addPlayerToGame(player, game);
+		director.addPlayerToGame(player, game);
+		
+	}
+	
 	@Test
 	public void directorCanCreateNewPlayer(){
 		Player newPlayer = director.createNewPlayer(firstName, playerLast, email);
 		
 		assertNotNull(newPlayer);		
+	}
+	
+	@Test
+	public void directorCanCreateNewPokerGame(){
+		
+		PokerGame pokerGame = director.createNewPokerGame(null);
+		
+		assertNotNull(pokerGame);
+		
 	}
 	
 	@Test

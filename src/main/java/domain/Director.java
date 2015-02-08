@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.Set;
 
 import exceptions.UnableToAddUserToGameException;
-
 import DataType.Game;
+import DataType.PokerGame;
+import DataType.Venue;
 
 public class Director extends User{
 
@@ -23,6 +24,10 @@ public class Director extends User{
 		}
 		
 	}
+	
+	public PokerGame createNewPokerGame(Venue venue){
+		return new PokerGame(venue);
+	}
 
 	public Player createNewPlayer(String firstName, String lastName, String email) {
 		return new Player(firstName, lastName, email);
@@ -32,6 +37,7 @@ public class Director extends User{
 	public void setPlayerScore(User player, Double score, Game game) {
 		game.getPlayerScoreMap().put(player,score);
 	}
+	
 	
 	
 

@@ -41,5 +41,9 @@ public class AdministratorTest {
 		assertNotNull(venue);
 	}
 	
+	@Test
+	public void administratorCanCreateNewDirector(){
+		//TODO: not implimented yet.
+	}
 	
 }

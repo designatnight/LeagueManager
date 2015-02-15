@@ -9,12 +9,23 @@
 	<description>setup for basic league management software</description>
 
 	<properties>
+		<!--<com.amazonaws-version>1.9.13</org.amazon-version>-->
 		<java-version>1.7</java-version>
 		<org.springframework-version>4.1.4.RELEASE</org.springframework-version>
 		<org.slf4j-version>1.6.1</org.slf4j-version>
+		<org.mockito-version>1.9.5</org.mockito-version>
+		<org.junit-version>4.7</org.junit-version>
 	</properties>
 
 	<dependencies>
+		<!-- Amazon
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk</artifactId>
+			<version>${com.amazonaws-version}</version>
+		</dependency> -->
+		
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -38,10 +49,16 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.7</version>
+			<version>${org.junit-version}</version>
 			<scope>test</scope>
 		</dependency>
-
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>${org.mockito-version}</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 
 	

@@ -1,12 +1,11 @@
 package DomainTests;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import DataType.Venue;
-
 import domain.Administrator;
 import domain.Director;
 import domain.Player;
@@ -43,7 +42,9 @@ public class AdministratorTest {
 	
 	@Test
 	public void administratorCanCreateNewDirector(){
-		//TODO: not implimented yet.
+		director = administrator.createNewDirector(firstName, directorLast, email);
+		
+		assertNotNull(director);
 	}
 	
 }

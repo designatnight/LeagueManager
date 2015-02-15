@@ -26,6 +26,7 @@ public class GameServiceTest {
 	public final String VENUE = "test venue";
 	public final String ADDRESS = "test address"; 
 	
+	
 	@Before
 	public void setup(){
 		gameService = new GameService();
@@ -33,7 +34,8 @@ public class GameServiceTest {
 		player = new Player(FIRST_NAME, PLAYER, EMIAL);
 		score = new Double(5);
 		venue = new Venue(VENUE, ADDRESS);
-		
+		gameService.venueMap.addVenue(venue);
+		gameService.playerMap.addPlayerToMap(player);
 	}
 	
 	@Test
@@ -45,12 +47,22 @@ public class GameServiceTest {
 		assertEquals(new Double(25), playerScore);
 	}
 	
+	@Test
+	public void directorAndAdministratorsCanSubmitGames() throws Exception{
+		PokerGame game = director.createNewPokerGame(venue);
+		director.addPlayerToGame(player, game);
+		director.setPlayerScore(player, score, game);
+		gameService.submitGame(director, game);
+		
+		assertEquals( 1, gameService.playerMap.getPlayerGameSet(player).size());
+	}
+	
 	public void createPlayerThatHasPlayedInManyGames() throws Exception{
 		for(int i=0; i <5; i++){
 			PokerGame game = director.createNewPokerGame(venue);
 			director.addPlayerToGame(player, game);
 			director.setPlayerScore(player, score, game);
-			
+			gameService.submitGame(director, game);
 		}
 	}
 }

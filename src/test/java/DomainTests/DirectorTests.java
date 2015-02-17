@@ -8,14 +8,14 @@ import org.junit.Test;
 
 import DataType.Game;
 import DataType.PokerGame;
+import DataType.User;
 import domain.Director;
-import domain.Player;
 import exceptions.UnableToAddUserToGameException;
 
 public class DirectorTests {
 
 	private Director director;
-	private Player player;
+	private User player;
 	private Game game;
 	private String firstName = "Test";
 	private String playerLast = "Player";
@@ -26,7 +26,7 @@ public class DirectorTests {
 	@Before
 	public void doSetup(){
 		director = new Director(firstName, directorLast, email);
-		player = new Player(firstName, playerLast, email);
+		player = new User(firstName, playerLast, email);
 		game = new PokerGame(null);
 		score = new Double(5);
 	}
@@ -48,7 +48,7 @@ public class DirectorTests {
 	
 	@Test
 	public void directorCanCreateNewPlayer(){
-		Player newPlayer = director.createNewPlayer(firstName, playerLast, email);
+		User newPlayer = director.createNewPlayer(firstName, playerLast, email);
 		
 		assertNotNull(newPlayer);		
 	}

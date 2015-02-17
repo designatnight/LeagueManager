@@ -5,16 +5,16 @@ import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
 
+import DataType.User;
 import DataType.Venue;
 import domain.Administrator;
 import domain.Director;
-import domain.Player;
 
 public class AdministratorTest {
 
 	private Administrator administrator;
 	private Director director;
-	private Player player;
+	private User player;
 	private Venue venue;
 	
 	private String firstName = "Test";

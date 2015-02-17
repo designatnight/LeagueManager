@@ -4,8 +4,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
-import domain.User;
-
 public class PlayerToGamesMap {
 
 	public HashMap<User ,Set<Game>> map;

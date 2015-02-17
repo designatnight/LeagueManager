@@ -1,16 +1,18 @@
 package DomainTests;
 
-import org.junit.Before;
 import static org.mockito.Mockito.mock;
+
+import org.junit.Before;
+
 import DataType.PlayerToGamesMap;
+import DataType.User;
 import DataType.Venue;
 import domain.Director;
-import domain.Player;
 
 public class PlayerToGamesMapTest {
 
 	private PlayerToGamesMap map;
-	private Player testPlayer;
+	private User testPlayer;
 	private Venue testVenue;
 	private Director testDirector;
 	
@@ -24,7 +26,7 @@ public class PlayerToGamesMapTest {
 	public void doSetup(){
 		map = new PlayerToGamesMap();
 		testVenue =  mock(Venue.class);
-		testPlayer = mock(Player.class);
+		testPlayer = mock(User.class);
 		testDirector = mock(Director.class);
 	}
 	

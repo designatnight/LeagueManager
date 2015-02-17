@@ -7,15 +7,15 @@ import org.junit.Test;
 
 import service.GameService;
 import DataType.PokerGame;
+import DataType.User;
 import DataType.Venue;
 import domain.Director;
-import domain.Player;
 
 public class GameServiceTest {
 
 	public GameService gameService;
 	public Director director;
-	public Player player;
+	public User player;
 	public double score;
 	public Venue venue;
 	
@@ -31,7 +31,7 @@ public class GameServiceTest {
 	public void setup(){
 		gameService = new GameService();
 		director = new Director(FIRST_NAME, DIRECTOR, EMIAL);
-		player = new Player(FIRST_NAME, PLAYER, EMIAL);
+		player = new User(FIRST_NAME, PLAYER, EMIAL);
 		score = new Double(5);
 		venue = new Venue(VENUE, ADDRESS);
 		gameService.venueMap.addVenue(venue);

@@ -1,5 +1,6 @@
 package domain;
 
+import DataType.User;
 import DataType.Venue;
 
 public class Administrator extends Director{

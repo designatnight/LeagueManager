@@ -13,6 +13,7 @@ public abstract class Game {
 	public HashMap<User, Double> playerScoreMap;
 	public HashMap<User, List<String>> playerAwards;
 	public Venue venue;
+	public Long id;
 
 	
 	public Game(Venue venue){

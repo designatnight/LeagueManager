@@ -58,17 +58,14 @@
 		<!-- Amazon -->
 		
 		<!--  dynamo db -->
+		
 		<dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-core</artifactId>
-			<version>${org.springframework.data.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.springframework</groupId>
-					<artifactId>spring-aop</artifactId>
-				</exclusion>
-			</exclusions>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>aws-java-sdk-dynamodb</artifactId>
+			<version>1.9.19</version>
 		</dependency>
+		
+		
 		
 	
 		<!-- Spring -->
@@ -121,6 +118,17 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
 			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-rest-core</artifactId>
+			<version>${org.springframework.data.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<!--  Hibernate -->
